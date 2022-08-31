@@ -3,6 +3,15 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "main": "./dist/piece-ui.cjs",
+  "module": "./dist/piece-ui.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/piece-ui.js",
+      "require": "./dist/piece-ui.umd.cjs"
+    }
+  },
   "scripts": {
     "dev": "vite build --watch",
     "build": "vue-tsc --noEmit && vite build",

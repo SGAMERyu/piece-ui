@@ -11,9 +11,6 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
-    "skipLibCheck": true,
-    "types": ["unplugin-vue-define-options/macros-global" /* ... */]
-  },
-  "include": ["**/*.ts", "**/*.d.ts", "**/*.vue"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+    "skipLibCheck": true
+  }
 }

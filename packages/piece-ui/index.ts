@@ -1,3 +1,3 @@
-import Button from './components/button/index.vue'
+import 'uno.css'
 
-export default { Button }
+export * from './components/button'
