@@ -11,5 +11,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@unocss/preset-mini": "^0.45.14",
+    "@unocss/preset-wind": "^0.45.14"
+  }
 }

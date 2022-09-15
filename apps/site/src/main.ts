@@ -1,8 +1,9 @@
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
-import { TESTButton } from 'piece-ui'
+import { PiButton } from 'piece-ui'
+import 'piece-ui/dist/style.css'
 import 'uno.css'
 
 const app = createApp(App)
-app.use(TESTButton).mount('#app')
+app.use(PiButton as any).mount('#app')
