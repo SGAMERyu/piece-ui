@@ -10,19 +10,23 @@
     ".": {
       "import": "./dist/piece-ui.js",
       "require": "./dist/piece-ui.umd.cjs"
-    }
+    },
+    "./dist/style.css": "./dist/style.css"
   },
   "scripts": {
     "dev": "vite build --watch",
     "build": "vue-tsc --noEmit && vite build",
+    "build:component": "vite build --mode component",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@piece-ui/preset": "workspace:*",
     "vue": "^3.2.37"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.0.3",
     "typescript": "^4.6.4",
+    "unplugin-vue-define-options": "^0.11.1",
     "vite": "^3.0.7",
     "vue-tsc": "^0.39.5"
   }

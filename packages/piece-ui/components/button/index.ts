@@ -4,6 +4,5 @@ PiButton.install = function (app: any) {
   app.component(PiButton.name, PiButton)
 }
 
-export const TESTButton = PiButton
-export default PiButton
 export * from './src/button.vue'
+export { default as PiButton } from './src/button.vue'
