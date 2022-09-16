@@ -5,7 +5,8 @@
     "node": true
   },
   "globals": {
-    "defineOptions": "writable"
+    "defineOptions": "writable",
+    "$variantsProps": "writable"
   },
   "plugins": ["@typescript-eslint", "promise", "prettier", "unicorn"],
   "parser": "vue-eslint-parser",

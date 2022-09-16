@@ -20,7 +20,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@piece-ui/preset": "workspace:*",
+    "pinceau": "^0.1.28",
     "vue": "^3.2.37"
   },
   "devDependencies": {
