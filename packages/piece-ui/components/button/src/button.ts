@@ -1,4 +1,4 @@
-import { PropType, ExtractPropTypes } from 'vue'
+import { PropType, ExtractPropTypes, ButtonHTMLAttributes } from 'vue'
 
 export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 export type ColorType = 'primary' | 'warn' | 'success' | 'danger'
@@ -21,6 +21,26 @@ export const buttonProps = {
   color: {
     type: String as PropType<Color>,
     default: 'primary'
+  },
+  block: {
+    type: Boolean,
+    default: false
+  },
+  loading: {
+    type: Boolean,
+    default: false
+  },
+  loadingPosition: {
+    type: String as PropType<'right' | 'left'>,
+    default: 'left'
+  },
+  nativeType: {
+    type: String as PropType<ButtonHTMLAttributes['type']>,
+    default: undefined
+  },
+  circle: {
+    type: Boolean,
+    default: false
   },
   disabled: Boolean
 }

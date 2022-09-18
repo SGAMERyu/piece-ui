@@ -6,11 +6,14 @@
       ds.e(size, !!size),
       ds.m('disabled', disabled),
       ds.e('rounded', !!rounded),
-      ds.m(color, COLORS.includes(color))
+      ds.m(color, COLORS.includes(color)),
+      ds.e('block', !!block),
+      ds.e('circle', !!circle)
     ]"
+    :type="isAsButton && nativeType"
     :disabled="disabled"
   >
-    <slot>{{ $props }}</slot>
+    <slot></slot>
   </component>
 </template>
 
@@ -22,8 +25,12 @@ defineOptions({
   name: 'PiButton'
 })
 
-defineProps(buttonProps)
+const props = defineProps(buttonProps)
 const ds = addDynamicClass('pi-btn')
+
+const isAsButton = computed(() => {
+  return props.as === 'button'
+})
 </script>
 
 <style lang="ts">
@@ -34,31 +41,65 @@ css({
     color: '{colors.pi-white}',
     outline: 'none',
     border: 'none',
-    background: 'transparent'
+    background: 'transparent',
+    cursor: 'pointer'
   },
   '.pi-btn--disabled': {
     background: '{colors.pi-disabled}',
     color: '{colors.pi-text-disabled}'
   },
+  '.pi-btn-block': {
+    width: '100%'
+  },
   '.pi-btn-xs': {
     height: '{size.pi-btn-xs}',
-    padding: '0px {size.pi-btn-padding-xs}'
+    fontSize: '{fontSizes.pi-font-xs}',
+    padding: '0px {size.pi-btn-padding-xs}',
+    '&.pi-btn-circle': {
+      padding: '0',
+      width: '{size.pi-btn-xs}',
+      borderRadius: '50%'
+    },
   },
   '.pi-btn-sm': {
     height: '{size.pi-btn-sm}',
-    padding: '0px {size.pi-btn-padding-sm}'
+    fontSize: '{fontSizes.pi-font-sm}',
+    padding: '0px {size.pi-btn-padding-sm}',
+    '&.pi-btn-circle': {
+      padding: '0',
+      width: '{size.pi-btn-sm}',
+      borderRadius: '50%'
+    },
   },
   '.pi-btn-md': {
     height: '{size.pi-btn-md}',
-    padding: '0px {size.pi-btn-padding-md}'
+    fontSize: '{fontSizes.pi-font-md}',
+    padding: '0px {size.pi-btn-padding-md}',
+    '&.pi-btn-circle': {
+      padding: '0',
+      width: '{size.pi-btn-md}',
+      borderRadius: '50%'
+    },
   },
   '.pi-btn-lg': {
     height: '{size.pi-btn-lg}',
-    padding: '0px {size.pi-btn-padding-lg}'
+    fontSize: '{fontSizes.pi-font-lg}',
+    padding: '0px {size.pi-btn-padding-lg}',
+    '&.pi-btn-circle': {
+      padding: '0',
+      width: '{size.pi-btn-lg}',
+      borderRadius: '50%'
+    },
   },
   '.pi-btn-xl': {
     height: '{size.pi-btn-xl}',
-    padding: '0px {size.pi-btn-padding-xl}'
+    fontSize: '{fontSizes.pi-font-xl}',
+    padding: '0px {size.pi-btn-padding-xl}',
+    '&.pi-btn-circle': {
+      padding: '0',
+      width: '{size.pi-btn-xl}',
+      borderRadius: '50%'
+    },
   },
   '.pi-btn-rounded': {
     borderRadius: '999px'

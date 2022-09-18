@@ -16,6 +16,9 @@ const lightTheme: ConfigTokens & PinceauTokens = {
   },
   size: {
     ...commonTheme.size
+  },
+  fontSizes: {
+    ...commonTheme.fontSizes
   }
 }
 

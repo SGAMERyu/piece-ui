@@ -14,7 +14,7 @@
     "skipLibCheck": true,
     "types": ["unplugin-vue-define-options/macros-global" /* ... */]
   },
-  "include": ["**/*.ts", "**/*.d.ts", "**/*.vue", "components/**/src/*.vue"],
+  "include": ["**/*.ts", "**/*.d.ts", "**/*.vue", "components/**/src/*.vue", "*.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }],
   "vueCompilerOptions": {
     "plugins": ["pinceau/volar"]
