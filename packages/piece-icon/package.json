@@ -3,9 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "dev": "esno watch build/index.ts"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "@types/node": "^18.7.18",
+    "fs-extra": "^10.1.0",
+    "vue": "^3.2.37",
+    "vue-tsc": "^0.38.2"
+  }
 }

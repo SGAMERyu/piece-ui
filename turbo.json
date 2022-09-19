@@ -10,9 +10,6 @@
     },
     "dev": {
       "cache": false
-    },
-    "build:component": {
-      "cache": false
     }
   }
 }
