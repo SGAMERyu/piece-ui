@@ -20,6 +20,14 @@ export default defineConfig({
       imports: ['vue']
     })
   ],
+  resolve: {
+    alias: [
+      {
+        find: '@',
+        replacement: resolve(__dirname)
+      }
+    ]
+  },
   build: {
     lib: {
       entry: resolve(__dirname, 'index.ts'),

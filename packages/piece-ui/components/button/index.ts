@@ -1,8 +1,7 @@
-import PiButton from './src/button.vue'
+import { withInstall } from '@/utils'
+import Button from './src/button.vue'
 
-PiButton.install = function (app: any) {
-  app.component(PiButton.name, PiButton)
-}
+export const PiButton = withInstall(Button)
+export default PiButton
 
-export * from './src/button.vue'
-export { default as PiButton } from './src/button.vue'
+export * from './src/button'

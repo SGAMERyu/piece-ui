@@ -8,7 +8,9 @@
     <pi-button size="lg" rounded>setting</pi-button>
     <pi-button size="xl" rounded>setting</pi-button>
     <pi-button circle>setting</pi-button>
-    <pi-button block>setting</pi-button>
+    <pi-button block>
+      <pi-icon color="warning"><HomeFill /></pi-icon>
+    </pi-button>
   </div>
 </template>
 

@@ -8,3 +8,7 @@ export function addDynamicClass(prefixName: string) {
     }
   }
 }
+
+export function addCssVarStyle(token: string, value: string) {
+  return `var(--${token}-pi-${value})`
+}

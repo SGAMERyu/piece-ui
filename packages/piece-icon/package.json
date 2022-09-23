@@ -3,8 +3,24 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
+  "types": "index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/types/*"
+      ]
+    }
+  },
   "scripts": {
-    "dev": "esno watch build/index.ts"
+    "build": "esno scripts/build.ts && pnpm build:types",
+    "build:types": "vue-tsc --declaration --emitDeclarationOnly"
+  },
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    }
   },
   "keywords": [],
   "author": "",
@@ -12,8 +28,10 @@
   "devDependencies": {
     "@types/fs-extra": "^9.0.13",
     "@types/node": "^18.7.18",
+    "esbuild": "^0.15.8",
     "fs-extra": "^10.1.0",
+    "unplugin-vue": "3.0.3-1",
     "vue": "^3.2.37",
-    "vue-tsc": "^0.38.2"
+    "vue-tsc": "^0.38.9"
   }
 }

@@ -1,10 +1,6 @@
 import { PropType, ExtractPropTypes, ButtonHTMLAttributes } from 'vue'
-
-export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
-export type ColorType = 'primary' | 'warn' | 'success' | 'danger'
-export type Color = string | ColorType
-
-export const COLORS = ['primary', 'warn', 'success', 'danger']
+import { Color, Size } from '../../types'
+import type Button from './button.vue'
 
 export const buttonProps = {
   size: {
@@ -46,3 +42,4 @@ export const buttonProps = {
 }
 
 export type ButtonProps = ExtractPropTypes<typeof buttonProps>
+export type ButtonInstance = InstanceType<typeof Button>

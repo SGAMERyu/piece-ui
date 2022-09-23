@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "vue": "^3.2.37",
-    "piece-ui": "workspace:*"
+    "piece-ui": "workspace:*",
+    "@piece-ui/icon": "workspace:*"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.0.3",

@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
     "target": "ESNext",
+    "declaration": true,
+    "baseUrl": ".",
+    "declarationDir": "./dist/types",
     "useDefineForClassFields": true,
     "module": "ESNext",
     "moduleResolution": "Node",
@@ -13,5 +16,5 @@
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true
   },
-  "include": ["build/*.ts", "*.d.ts", "components/*.vue"]
+  "include": ["./src/**/*"]
 }

@@ -18,8 +18,9 @@
 </template>
 
 <script lang="ts" setup>
-import { buttonProps, COLORS } from './button'
-import { addDynamicClass } from '../../../utils'
+import { buttonProps } from './button'
+import { addDynamicClass } from '@/utils'
+import { COLORS } from '@/types'
 
 defineOptions({
   name: 'PiButton'
@@ -110,7 +111,7 @@ css({
   '.pi-btn--info': {
     background: '{colors.pi-info-500}'
   },
-  '.pi-btn--warn': {
+  '.pi-btn--warning': {
     background: '{colors.pi-warning-500}'
   },
   '.pi-btn--success': {

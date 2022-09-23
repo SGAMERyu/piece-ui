@@ -1,9 +1,14 @@
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
-import { PiButton } from 'piece-ui'
+import PieceUi from 'piece-ui'
 import 'piece-ui/dist/style.css'
+import * as PieceUiIcons from '@piece-ui/icon'
 import 'uno.css'
 
 const app = createApp(App)
-app.use(PiButton as any).mount('#app')
+for (const [key, component] of Object.entries(PieceUiIcons)) {
+  console.log(key, component)
+  app.component(key, component)
+}
+app.use(PieceUi).mount('#app')

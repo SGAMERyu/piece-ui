@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "ESNext",
+    "baseUrl": "./",
     "useDefineForClassFields": true,
     "module": "ESNext",
     "moduleResolution": "Node",
@@ -12,9 +13,12 @@
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
-    "types": ["unplugin-vue-define-options/macros-global" /* ... */]
+    "types": ["unplugin-vue-define-options/macros-global" /* ... */],
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
-  "include": ["**/*.ts", "**/*.d.ts", "**/*.vue", "components/**/src/*.vue", "*.d.ts"],
+  "include": ["**/*.ts", "**/*.d.ts", "**/*.vue", "components/**/**/*", "*.d.ts", "**/**/*.ts"],
   "references": [{ "path": "./tsconfig.node.json" }],
   "vueCompilerOptions": {
     "plugins": ["pinceau/volar"]
