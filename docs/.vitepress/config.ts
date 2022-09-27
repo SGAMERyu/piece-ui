@@ -19,6 +19,8 @@ export default defineConfig({
     }
   },
   markdown: {
-    config: (md) => {}
+    config: (md) => {
+      console.log(1)
+    }
   }
 })
