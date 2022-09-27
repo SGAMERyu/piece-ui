@@ -10,7 +10,7 @@
     "prepare": "husky install",
     "commit": "npx git-cz",
     "build": "turbo run build",
-    "dev:docs": "vitepress dev docs",
+    "docs": "pnpm -C docs run dev",
     "dev": "turbo run dev --parallel",
     "build:component": "turbo run build:component --parallel",
     "lint": "turbo run lint",
@@ -20,6 +20,9 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "piece-ui": "workspace:*"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
@@ -54,6 +57,7 @@
     "unocss": "^0.45.21",
     "unplugin-auto-import": "^0.11.2",
     "unplugin-vue-define-options": "^0.11.1",
+    "vite": "^3.0.7",
     "vite-plugin-dts": "^1.4.1",
     "vite-plugin-node-polyfills": "^0.1.8",
     "vitepress": "1.0.0-alpha.15"

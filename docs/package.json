@@ -1,0 +1,22 @@
+{
+  "name": "@piece-ui/docs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Piece-Ui docs",
+  "keywords": [
+    "Piece-Ui",
+    "docs"
+  ],
+  "scripts": {
+    "dev": "vitepress dev --port 9999 --open",
+    "build": "vitepress build",
+    "serve": "vitepress serve"
+  },
+  "devDependencies": {
+    "sass": "^1.55.0"
+  },
+  "dependencies": {
+    "markdown-it": "^13.0.1",
+    "markdown-it-container": "^3.0.0"
+  }
+}

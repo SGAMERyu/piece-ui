@@ -39,66 +39,66 @@ css({
   '.pi-btn': {
     display: 'flex',
     alignItems: 'center',
-    color: '{colors.pi-white}',
+    color: '{colors.white}',
     outline: 'none',
     border: 'none',
     background: 'transparent',
     cursor: 'pointer'
   },
   '.pi-btn--disabled': {
-    background: '{colors.pi-disabled}',
-    color: '{colors.pi-text-disabled}'
+    background: '{colors.disabled}',
+    color: '{colors.text-disabled}'
   },
   '.pi-btn-block': {
     width: '100%'
   },
   '.pi-btn-xs': {
-    height: '{size.pi-btn-xs}',
-    fontSize: '{fontSizes.pi-font-xs}',
-    padding: '0px {size.pi-btn-padding-xs}',
+    height: '{size.btn.xs}',
+    fontSize: '{fontSizes.xs}',
+    padding: '0px {size.btn-padding.xs}',
     '&.pi-btn-circle': {
       padding: '0',
-      width: '{size.pi-btn-xs}',
+      width: '{size.btn.xs}',
       borderRadius: '50%'
     },
   },
   '.pi-btn-sm': {
-    height: '{size.pi-btn-sm}',
-    fontSize: '{fontSizes.pi-font-sm}',
-    padding: '0px {size.pi-btn-padding-sm}',
+    height: '{size.btn.sm}',
+    fontSize: '{fontSizes.sm}',
+    padding: '0px {size.btn-padding.sm}',
     '&.pi-btn-circle': {
       padding: '0',
-      width: '{size.pi-btn-sm}',
+      width: '{size.btn.sm}',
       borderRadius: '50%'
     },
   },
   '.pi-btn-md': {
-    height: '{size.pi-btn-md}',
-    fontSize: '{fontSizes.pi-font-md}',
-    padding: '0px {size.pi-btn-padding-md}',
+    height: '{size.btn.md}',
+    fontSize: '{fontSizes.font.md}',
+    padding: '0px {size.btn-padding.md}',
     '&.pi-btn-circle': {
       padding: '0',
-      width: '{size.pi-btn-md}',
+      width: '{size.btn.md}',
       borderRadius: '50%'
     },
   },
   '.pi-btn-lg': {
-    height: '{size.pi-btn-lg}',
-    fontSize: '{fontSizes.pi-font-lg}',
-    padding: '0px {size.pi-btn-padding-lg}',
+    height: '{size.btn.lg}',
+    fontSize: '{fontSizes.lg}',
+    padding: '0px {size.btn-padding.lg}',
     '&.pi-btn-circle': {
       padding: '0',
-      width: '{size.pi-btn-lg}',
+      width: '{size.btn.lg}',
       borderRadius: '50%'
     },
   },
   '.pi-btn-xl': {
-    height: '{size.pi-btn-xl}',
-    fontSize: '{fontSizes.pi-font-xl}',
-    padding: '0px {size.pi-btn-padding-xl}',
+    height: '{size.btn.xl}',
+    fontSize: '{fontSizes.xl}',
+    padding: '0px {size.btn-padding.xl}',
     '&.pi-btn-circle': {
       padding: '0',
-      width: '{size.pi-btn-xl}',
+      width: '{size.btn.xl}',
       borderRadius: '50%'
     },
   },
@@ -106,16 +106,16 @@ css({
     borderRadius: '999px'
   },
   '.pi-btn--primary': {
-    background: '{colors.pi-primary-500}'
+    background: '{colors.primary.500}'
   },
   '.pi-btn--info': {
-    background: '{colors.pi-info-500}'
+    background: '{colors.info.500}'
   },
   '.pi-btn--warning': {
-    background: '{colors.pi-warning-500}'
+    background: '{colors.warning.500}'
   },
   '.pi-btn--success': {
-    background: '{colors.pi-success-500}'
+    background: '{colors.success.500}'
   }
 })
 </style>

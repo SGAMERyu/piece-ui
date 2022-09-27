@@ -1,11 +1,29 @@
 export const primaryLightColor = {
-  'pi-primary-100': '#D6E9FF',
-  'pi-primary-200': '#ADD1FF',
-  'pi-primary-300': '#83B5FF',
-  'pi-primary-400': '#659EFF',
-  'pi-primary-500': '#3277FF',
-  'pi-primary-600': '#245BDB',
-  'pi-primary-700': '#1943B7',
-  'pi-primary-800': '#0F2E93',
-  'pi-primary-900': '#091F7A'
+  100: {
+    value: '#0A2F71'
+  },
+  200: {
+    value: '#ADD1FF'
+  },
+  300: {
+    value: '#83B5FF'
+  },
+  400: {
+    value: '#659EFF'
+  },
+  500: {
+    value: '#3277FF'
+  },
+  600: {
+    value: '#245BDB'
+  },
+  700: {
+    value: '#1943B7'
+  },
+  800: {
+    value: '#0F2E93'
+  },
+  900: {
+    value: '#091F7A'
+  }
 }

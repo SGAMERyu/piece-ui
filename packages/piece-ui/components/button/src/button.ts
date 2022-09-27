@@ -1,5 +1,5 @@
 import { PropType, ExtractPropTypes, ButtonHTMLAttributes } from 'vue'
-import { Color, Size } from '../../types'
+import { Color, Size } from '@/types'
 import type Button from './button.vue'
 
 export const buttonProps = {

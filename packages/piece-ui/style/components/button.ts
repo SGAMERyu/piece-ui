@@ -1,10 +1,10 @@
-import { convertThemePxToRem, generateThemeToSize, convertThemeMapToTokenMap } from '../generate'
+import { generateThemeToSize } from '../generate'
 
-const buttonSizeMap = {
-  // size
-  ...generateThemeToSize('pi-btn', [24, 28, 32, 36, 40]),
-  // padding
-  ...generateThemeToSize('pi-btn-padding', [10, 12, 16, 20, 24])
+export const tokenButtonSize = {
+  btn: {
+    ...generateThemeToSize([24, 28, 32, 36, 40])
+  },
+  'btn-padding': {
+    ...generateThemeToSize([10, 12, 16, 20, 24])
+  }
 }
-
-export const tokenButtonSize = convertThemeMapToTokenMap(convertThemePxToRem(buttonSizeMap))

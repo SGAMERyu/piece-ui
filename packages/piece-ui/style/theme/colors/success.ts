@@ -1,12 +1,29 @@
 export const successLightColor = {
-    'pi-success-100': '#EAFCD6',
-    'pi-success-200': '#D1F9AF',
-    'pi-success-300': '#ADED83',
-    'pi-success-400': '#89DC61',
-    'pi-success-500': '#58C633',
-    'pi-success-600': '#3DAA25',
-    'pi-success-700': '#268E19',
-    'pi-success-800': '#147210',
-    'pi-success-900': '#095F0C'
+  100: {
+    value: '#EAFCD6'
+  },
+  200: {
+    value: '#D1F9AF'
+  },
+  300: {
+    value: '#ADED83'
+  },
+  400: {
+    value: '#89DC61'
+  },
+  500: {
+    value: '#58C633'
+  },
+  600: {
+    value: '#3DAA25'
+  },
+  700: {
+    value: '#268E19'
+  },
+  800: {
+    value: '#147210'
+  },
+  900: {
+    value: '#095F0C'
   }
-  
+}

@@ -1,5 +1,4 @@
 import type { ConfigTokens, PinceauTokens } from 'pinceau'
-import { convertThemeMapToTokenMap } from '../generate'
 import { infoLightColor } from './colors/info'
 import { primaryLightColor } from './colors/primary'
 import { successLightColor } from './colors/success'
@@ -9,10 +8,18 @@ import commonTheme from './common'
 const lightTheme: ConfigTokens & PinceauTokens = {
   colors: {
     ...commonTheme.colors,
-    ...convertThemeMapToTokenMap(primaryLightColor),
-    ...convertThemeMapToTokenMap(infoLightColor),
-    ...convertThemeMapToTokenMap(successLightColor),
-    ...convertThemeMapToTokenMap(warningLightColor)
+    primary: {
+      ...primaryLightColor
+    },
+    info: {
+      ...infoLightColor
+    },
+    success: {
+      ...successLightColor
+    },
+    warning: {
+      ...warningLightColor
+    }
   },
   size: {
     ...commonTheme.size

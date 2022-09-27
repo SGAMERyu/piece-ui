@@ -1,11 +1,29 @@
 export const warningLightColor = {
-  'pi-warning-100': '#FFFCD6',
-  'pi-warning-200': '#FFF9AD',
-  'pi-warning-300': '#FFF583',
-  'pi-warning-400': '#FFF065',
-  'pi-warning-500': '#FFEA32',
-  'pi-warning-600': '#DBC624',
-  'pi-warning-700': '#B7A319',
-  'pi-warning-800': '#93820F',
-  'pi-warning-900': '#7A6A09'
+  100: {
+    value: '#FFFCD6'
+  },
+  200: {
+    value: '#FFF9AD'
+  },
+  300: {
+    value: '#FFF583'
+  },
+  400: {
+    value: '#FFF065'
+  },
+  500: {
+    value: '#FFEA32'
+  },
+  600: {
+    value: '#DBC624'
+  },
+  700: {
+    value: '#B7A319'
+  },
+  800: {
+    value: '#93820F'
+  },
+  900: {
+    value: '#7A6A09'
+  }
 }
