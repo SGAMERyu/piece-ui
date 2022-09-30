@@ -12,6 +12,7 @@
     "build": "turbo run build",
     "docs": "pnpm -C docs run dev",
     "dev": "turbo run dev --parallel",
+    "play": "pnpm -C packages/piece-ui run play",
     "build:component": "turbo run build:component --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
