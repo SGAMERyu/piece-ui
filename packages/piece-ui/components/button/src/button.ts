@@ -1,6 +1,7 @@
 import { PropType, ExtractPropTypes, ButtonHTMLAttributes } from 'vue'
 import { Color, Size } from '@/types'
 import type Button from './button.vue'
+import { ThemeKey } from 'pinceau'
 
 export const buttonProps = {
   size: {

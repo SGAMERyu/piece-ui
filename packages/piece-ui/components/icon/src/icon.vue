@@ -1,5 +1,5 @@
 <template>
-  <i v-bind="$attrs" :style="style">
+  <i v-bind="$attrs" :style="style" class="pi-icon">
     <slot></slot>
   </i>
 </template>
@@ -26,3 +26,14 @@ const style = computed<CSSProperties>(() => {
   }
 })
 </script>
+
+<style lang="ts">
+css({
+  '.pi-icon': {
+    '& svg': {
+      width: '1em',
+      height: '1em'
+    }
+  }
+})
+</style>

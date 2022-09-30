@@ -20,7 +20,28 @@ export default defineConfig({
   },
   markdown: {
     config: (md) => {
-      console.log(1)
+      md.use(Container, 'card', {
+        render(tokens, idx) {
+          const m = tokens[idx].info.trim().match(/^card\s+(.*)$/)
+          console.log(m)
+          if (tokens[idx].nesting === 1) {
+            return `<DemoBlock>`
+          } else {
+            return `</DemoBlock>`
+          }
+        }
+      })
+      md.use(Container, 'code', {
+        render(tokens, idx) {
+          const m = tokens[idx].info.trim().match(/^code\s+(.*)$/)
+          console.log(m)
+          if (tokens[idx].nesting === 1) {
+            return `<DemoCode>`
+          } else {
+            return `</DemoCode>`
+          }
+        }
+      })
     }
   }
 })

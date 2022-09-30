@@ -1,6 +1,6 @@
 export const primaryLightColor = {
   100: {
-    value: '#0A2F71'
+    value: '#D6E9FF'
   },
   200: {
     value: '#ADD1FF'

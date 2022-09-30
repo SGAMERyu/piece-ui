@@ -116,6 +116,9 @@ css({
   },
   '.pi-btn--success': {
     background: '{colors.success.500}'
-  }
+  },
+  '.pi-btn--danger': {
+    background: '{colors.danger.500}'
+  },
 })
 </style>

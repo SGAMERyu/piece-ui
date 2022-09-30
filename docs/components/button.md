@@ -5,8 +5,12 @@ lang: en-US
 
 # Button
 
-```vue-html
-<pi-button type="primary"></pi-button>
-```
+<DemoBlock>
 
+<template #demo>
 <BasicButton />
+</template>
+
+<<< @/example/button/basic-button.vue
+
+</DemoBlock>

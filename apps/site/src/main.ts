@@ -8,7 +8,6 @@ import 'uno.css'
 
 const app = createApp(App)
 for (const [key, component] of Object.entries(PieceUiIcons)) {
-  console.log(key, component)
   app.component(key, component)
 }
 app.use(PieceUi).mount('#app')

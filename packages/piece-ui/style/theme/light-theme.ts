@@ -1,4 +1,5 @@
 import type { ConfigTokens, PinceauTokens } from 'pinceau'
+import { dangerLightColor } from './colors/danger'
 import { infoLightColor } from './colors/info'
 import { primaryLightColor } from './colors/primary'
 import { successLightColor } from './colors/success'
@@ -19,6 +20,9 @@ const lightTheme: ConfigTokens & PinceauTokens = {
     },
     warning: {
       ...warningLightColor
+    },
+    danger: {
+      ...dangerLightColor
     }
   },
   size: {

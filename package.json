@@ -22,7 +22,8 @@
     }
   },
   "dependencies": {
-    "piece-ui": "workspace:*"
+    "piece-ui": "workspace:*",
+    "@piece-ui/icon": "workspace:*"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
