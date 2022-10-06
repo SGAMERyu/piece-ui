@@ -69,5 +69,5 @@ async function bootstrap() {
 }
 
 consola.info(chalk.blue('start generate svg file'))
-bootstrap()
+await bootstrap()
 consola.info(chalk.green('generate svg vue component success'))

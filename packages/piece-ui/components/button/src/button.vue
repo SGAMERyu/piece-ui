@@ -3,6 +3,9 @@
     :is="as"
     class="pi-btn"
     :class="[
+      av('disabled', disabled),
+      av('block', block),
+      av('rounded', rounded),
       ds.e(size, !!size),
       ds.m('disabled', disabled),
       ds.e('rounded', !!rounded),
@@ -19,7 +22,7 @@
 
 <script lang="ts" setup>
 import { buttonProps } from './button'
-import { addDynamicClass } from '@/utils'
+import { addDynamicClass, addVariantClass } from '@/utils'
 import { COLORS } from '@/types'
 
 defineOptions({
@@ -27,6 +30,7 @@ defineOptions({
 })
 
 const props = defineProps(buttonProps)
+const av = addVariantClass
 const ds = addDynamicClass('pi-btn')
 
 const isAsButton = computed(() => {
@@ -37,20 +41,30 @@ const isAsButton = computed(() => {
 <style lang="ts">
 css({
   '.pi-btn': {
+    '--pi-btn-disabled-bg-color': '{colors.disabled}',
+    '--pi-btn-disabled-text-color': '{colors.text-disabled}',
     display: 'flex',
+    justifyContent: 'center',
     alignItems: 'center',
-    color: '{colors.white}',
     outline: 'none',
     border: 'none',
     background: 'transparent',
-    cursor: 'pointer'
-  },
-  '.pi-btn--disabled': {
-    background: '{colors.disabled}',
-    color: '{colors.text-disabled}'
-  },
-  '.pi-btn-block': {
-    width: '100%'
+    cursor: 'pointer',
+    color: 'var(--pi-btn-text-color)',
+    backgroundColor: 'var(--pi-btn-bg-color)',
+    variants: {
+      disabled: {
+        background: 'var(--pi-btn-disabled-bg-color)',
+        color: 'var(--pi-btn-disabled-text-color)',
+        'cursor': 'not-allowed'
+      },
+      block: {
+        width: '100%'
+      },
+      rounded: {
+        borderRadius: '999px'
+      }
+    }
   },
   '.pi-btn-xs': {
     height: '{size.btn.xs}',
@@ -74,7 +88,7 @@ css({
   },
   '.pi-btn-md': {
     height: '{size.btn.md}',
-    fontSize: '{fontSizes.font.md}',
+    fontSize: '{fontSizes.md}',
     padding: '0px {size.btn-padding.md}',
     '&.pi-btn-circle': {
       padding: '0',
@@ -102,23 +116,26 @@ css({
       borderRadius: '50%'
     },
   },
-  '.pi-btn-rounded': {
-    borderRadius: '999px'
-  },
+
   '.pi-btn--primary': {
-    background: '{colors.primary.500}'
+    '--pi-btn-text-color': '{colors.white}',
+    '--pi-btn-bg-color': '{colors.primary.500}'
   },
   '.pi-btn--info': {
-    background: '{colors.info.500}'
+    '--pi-btn-text-color': '{colors.white}',
+    '--pi-btn-bg-color': '{colors.info.500}'
   },
   '.pi-btn--warning': {
-    background: '{colors.warning.500}'
+    '--pi-btn-text-color': '{colors.white}',
+    '--pi-btn-bg-color': '{colors.warning.500}'
   },
   '.pi-btn--success': {
-    background: '{colors.success.500}'
+    '--pi-btn-text-color': '{colors.white}',
+    '--pi-btn-bg-color': '{colors.success.500}'
   },
   '.pi-btn--danger': {
-    background: '{colors.danger.500}'
+    '--pi-btn-text-color': '{colors.white}',
+    '--pi-btn-bg-color': '{colors.danger.500}'
   },
 })
 </style>

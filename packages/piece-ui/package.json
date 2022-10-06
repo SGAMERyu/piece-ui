@@ -17,20 +17,19 @@
     "dev": "vite build --watch",
     "play": "histoire dev",
     "build": "vue-tsc --noEmit && vite build",
-    "build:component": "vite build --mode component",
     "preview": "vite preview"
   },
   "dependencies": {
-    "pinceau": "^0.1.28",
+    "pinceau": "0.2.0",
     "vue": "^3.2.37"
   },
   "devDependencies": {
     "@histoire/plugin-vue": "^0.10.7",
-    "@vitejs/plugin-vue": "^3.0.3",
+    "@vitejs/plugin-vue": "*",
     "histoire": "^0.10.7",
     "typescript": "^4.6.4",
     "unplugin-vue-define-options": "^0.11.1",
-    "vite": "^3.0.7",
+    "vite": "*",
     "vue-tsc": "^0.39.5"
   }
 }

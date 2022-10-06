@@ -9,6 +9,10 @@ export function addDynamicClass(prefixName: string) {
   }
 }
 
+export function addVariantClass(className: string, classProps: unknown) {
+  return classProps ? className : null
+}
+
 export function addCssVarStyle(token: string, value: string) {
   return `var(--${token}-pi-${value})`
 }

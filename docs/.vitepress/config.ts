@@ -23,7 +23,7 @@ export default defineConfig({
       md.use(Container, 'card', {
         render(tokens, idx) {
           const m = tokens[idx].info.trim().match(/^card\s+(.*)$/)
-          console.log(m)
+
           if (tokens[idx].nesting === 1) {
             return `<DemoBlock>`
           } else {
@@ -34,7 +34,7 @@ export default defineConfig({
       md.use(Container, 'code', {
         render(tokens, idx) {
           const m = tokens[idx].info.trim().match(/^code\s+(.*)$/)
-          console.log(m)
+
           if (tokens[idx].nesting === 1) {
             return `<DemoCode>`
           } else {
