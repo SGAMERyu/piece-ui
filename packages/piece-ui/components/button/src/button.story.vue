@@ -53,6 +53,9 @@
         ></PiButton>
       </div>
     </Variant>
+    <Variant title="block" :state="{}">
+      <PiButton block>block</PiButton>
+    </Variant>
   </Story>
 </template>
 

@@ -1,16 +1,12 @@
-import { PropType, ExtractPropTypes, ButtonHTMLAttributes } from 'vue'
+import { PropType, ExtractPropTypes, ButtonHTMLAttributes, Component } from 'vue'
 import { Color, Size } from '@/types'
 import type Button from './button.vue'
-import { ThemeKey } from 'pinceau'
+import { LoaderLine } from '@piece-ui/icon'
 
 export const buttonProps = {
   size: {
     type: String as PropType<Size>,
     default: 'md'
-  },
-  as: {
-    type: String,
-    default: 'button'
   },
   rounded: {
     type: Boolean
@@ -19,13 +15,17 @@ export const buttonProps = {
     type: String as PropType<Color>,
     default: 'primary'
   },
-  block: {
+  fullWidth: {
     type: Boolean,
     default: false
   },
   loading: {
     type: Boolean,
     default: false
+  },
+  loadingIcon: {
+    type: String as PropType<Component>,
+    default: () => LoaderLine
   },
   loadingPosition: {
     type: String as PropType<'right' | 'left'>,
@@ -39,7 +39,10 @@ export const buttonProps = {
     type: Boolean,
     default: false
   },
-  disabled: Boolean
+  disabled: {
+    type: Boolean,
+    default: false
+  }
 }
 
 export type ButtonProps = ExtractPropTypes<typeof buttonProps>

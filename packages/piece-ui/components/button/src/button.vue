@@ -1,23 +1,26 @@
 <template>
-  <component
-    :is="as"
+  <button
     class="pi-btn"
     :class="[
       av('disabled', disabled),
-      av('block', block),
+      av('full', fullWidth),
       av('rounded', rounded),
+      av('circle', circle),
       ds.e(size, !!size),
-      ds.m('disabled', disabled),
-      ds.e('rounded', !!rounded),
-      ds.m(color, COLORS.includes(color)),
-      ds.e('block', !!block),
-      ds.e('circle', !!circle)
+      ds.m(color, COLORS.includes(color))
     ]"
-    :type="isAsButton && nativeType"
+    :type="nativeType"
     :disabled="disabled"
   >
-    <slot></slot>
-  </component>
+    <div class="pi-btn-inner">
+      <slot></slot>
+      <div>
+        <Pi-icon>
+          <component :is="loadingIcon"></component>
+        </Pi-icon>
+      </div>
+    </div>
+  </button>
 </template>
 
 <script lang="ts" setup>
@@ -29,13 +32,9 @@ defineOptions({
   name: 'PiButton'
 })
 
-const props = defineProps(buttonProps)
+defineProps(buttonProps)
 const av = addVariantClass
 const ds = addDynamicClass('pi-btn')
-
-const isAsButton = computed(() => {
-  return props.as === 'button'
-})
 </script>
 
 <style lang="ts">
@@ -58,65 +57,52 @@ css({
         color: 'var(--pi-btn-disabled-text-color)',
         'cursor': 'not-allowed'
       },
-      block: {
+      full: {
         width: '100%'
       },
       rounded: {
         borderRadius: '999px'
+      },
+      circle: {
+        width: 'var(--pi-btn-size-width)',
+        padding: '0',
+        borderRadius: '50%'
       }
+    },
+    '&-inner': {
+      display: 'flex'
     }
   },
   '.pi-btn-xs': {
+    '--pi-btn-size-width': '{size.btn.xs}',
     height: '{size.btn.xs}',
     fontSize: '{fontSizes.xs}',
     padding: '0px {size.btn-padding.xs}',
-    '&.pi-btn-circle': {
-      padding: '0',
-      width: '{size.btn.xs}',
-      borderRadius: '50%'
-    },
   },
   '.pi-btn-sm': {
+    '--pi-btn-size-width': '{size.btn.sm}',
     height: '{size.btn.sm}',
     fontSize: '{fontSizes.sm}',
     padding: '0px {size.btn-padding.sm}',
-    '&.pi-btn-circle': {
-      padding: '0',
-      width: '{size.btn.sm}',
-      borderRadius: '50%'
-    },
   },
   '.pi-btn-md': {
+    '--pi-btn-size-width': '{size.btn.md}',
     height: '{size.btn.md}',
     fontSize: '{fontSizes.md}',
     padding: '0px {size.btn-padding.md}',
-    '&.pi-btn-circle': {
-      padding: '0',
-      width: '{size.btn.md}',
-      borderRadius: '50%'
-    },
   },
   '.pi-btn-lg': {
+    '--pi-btn-size-width': '{size.btn.lg}',
     height: '{size.btn.lg}',
     fontSize: '{fontSizes.lg}',
     padding: '0px {size.btn-padding.lg}',
-    '&.pi-btn-circle': {
-      padding: '0',
-      width: '{size.btn.lg}',
-      borderRadius: '50%'
-    },
   },
   '.pi-btn-xl': {
+    '--pi-btn-size-width': '{size.btn.xl}',
     height: '{size.btn.xl}',
     fontSize: '{fontSizes.xl}',
     padding: '0px {size.btn-padding.xl}',
-    '&.pi-btn-circle': {
-      padding: '0',
-      width: '{size.btn.xl}',
-      borderRadius: '50%'
-    },
   },
-
   '.pi-btn--primary': {
     '--pi-btn-text-color': '{colors.white}',
     '--pi-btn-bg-color': '{colors.primary.500}'
