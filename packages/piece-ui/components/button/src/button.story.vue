@@ -54,7 +54,15 @@
       </div>
     </Variant>
     <Variant title="block" :state="{}">
-      <PiButton block>block</PiButton>
+      <PiButton full-width>block</PiButton>
+    </Variant>
+    <Variant title="loading && icon" :state="{}">
+      <div class="demo-flex">
+        <PiButton :start-icon="UploadFill">upload file</PiButton>
+        <PiButton :end-icon="UploadFill">upload file</PiButton>
+        <PiButton :start-icon="UploadFill" loading>upload file</PiButton>
+        <PiButton :end-icon="UploadFill" loading>upload file</PiButton>
+      </div>
     </Variant>
   </Story>
 </template>
@@ -62,6 +70,7 @@
 <script lang="ts" setup>
 import PiButton from './button.vue'
 import PiIcon from '@/components/icon'
+import { UploadFill } from '@piece-ui/icon'
 </script>
 
 <style lang="scss">

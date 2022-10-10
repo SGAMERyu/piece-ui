@@ -1,29 +1,29 @@
 export const dangerLightColor = {
   100: {
-    value: '#FFE7D8'
+    value: '#FFE7D2'
   },
   200: {
-    value: '#FFC8B1'
+    value: '#FFC9A6'
   },
   300: {
-    value: '#FFA38A'
+    value: '#FFA479'
   },
   400: {
     value: '#FF806D'
   },
   500: {
-    value: '#FF463D'
+    value: '#FF4621'
   },
   600: {
-    value: '#DB2C33'
+    value: '#DB2918'
   },
   700: {
-    value: '#B71E31'
+    value: '#B71210'
   },
   800: {
-    value: '#93132D'
+    value: '#930A13'
   },
   900: {
-    value: '#7A0B2B'
+    value: '#7A0616'
   }
 }

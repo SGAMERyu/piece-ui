@@ -117,6 +117,7 @@ importers:
   packages/piece-ui:
     specifiers:
       '@histoire/plugin-vue': ^0.10.7
+      '@piece-ui/icon': workspace:*
       '@vitejs/plugin-vue': '*'
       histoire: ^0.10.7
       pinceau: 0.2.0
@@ -126,6 +127,7 @@ importers:
       vue: ^3.2.37
       vue-tsc: ^0.39.5
     dependencies:
+      '@piece-ui/icon': link:../piece-icon
       pinceau: 0.2.0_postcss@8.4.17
       vue: 3.2.40
     devDependencies:
@@ -548,7 +550,7 @@ packages:
       cosmiconfig-typescript-loader: 4.1.1_gpl3msxjb2n3qdkii2jvdrcxxe
       lodash: 4.17.21
       resolve-from: 5.0.0
-      ts-node: 10.9.1_gbhfbbeqrol7fxixnzbkbuanxe
+      ts-node: 10.9.1_fk6arlf3j7tudlucddpzvj2plq
       typescript: 4.8.4
     transitivePeerDependencies:
       - '@swc/core'
@@ -1261,7 +1263,7 @@ packages:
   /@types/concat-stream/1.6.1:
     resolution: {integrity: sha512-eHE4cQPoj6ngxBZMvVf6Hw7Mh4jMW4U9lpGmS5GBPB9RYxlFg+CHaVN7ErNY4W9XfLIEn20b4VDYaIrbq0q4uA==}
     dependencies:
-      '@types/node': 8.10.66
+      '@types/node': 18.8.0
     dev: true
 
   /@types/estree/0.0.39:
@@ -1279,7 +1281,7 @@ packages:
   /@types/form-data/0.0.33:
     resolution: {integrity: sha512-8BSvG1kGm83cyJITQMZSulnl6QV8jqAGreJsc5tPu1Jq0vTSOiY/k24Wx82JRpWwZSqrala6sd5rWi6aNXvqcw==}
     dependencies:
-      '@types/node': 8.10.66
+      '@types/node': 18.8.0
     dev: true
 
   /@types/fs-extra/9.0.13:
@@ -1337,7 +1339,6 @@ packages:
 
   /@types/node/18.8.0:
     resolution: {integrity: sha512-u+h43R6U8xXDt2vzUaVP3VwjjLyOJk6uEciZS8OSyziUQGOwmk+l+4drxcsDboHXwyTaqS1INebghmWMRxq3LA==}
-    dev: false
 
   /@types/node/8.10.66:
     resolution: {integrity: sha512-tktOkFUA4kXx2hhhrB8bIFb5TbwzS4uOhKEmwiD+NoiL0qtP2OQ9mFldbgD4dV1djrlBYP6eBuQZiWjuHUpqFw==}
@@ -2497,8 +2498,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
-      JSONStream: 1.3.5
       is-text-path: 1.0.1
+      JSONStream: 1.3.5
       lodash: 4.17.21
       meow: 8.1.2
       split2: 3.2.2
@@ -2531,7 +2532,7 @@ packages:
     dependencies:
       '@types/node': 14.18.31
       cosmiconfig: 7.0.1
-      ts-node: 10.9.1_gbhfbbeqrol7fxixnzbkbuanxe
+      ts-node: 10.9.1_fk6arlf3j7tudlucddpzvj2plq
       typescript: 4.8.4
     dev: true
 
@@ -6376,6 +6377,37 @@ packages:
     dependencies:
       '@ts-morph/common': 0.17.0
       code-block-writer: 11.0.3
+    dev: true
+
+  /ts-node/10.9.1_fk6arlf3j7tudlucddpzvj2plq:
+    resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
+    hasBin: true
+    peerDependencies:
+      '@swc/core': '>=1.2.50'
+      '@swc/wasm': '>=1.2.50'
+      '@types/node': '*'
+      typescript: '>=2.7'
+    peerDependenciesMeta:
+      '@swc/core':
+        optional: true
+      '@swc/wasm':
+        optional: true
+    dependencies:
+      '@cspotcode/source-map-support': 0.8.1
+      '@tsconfig/node10': 1.0.9
+      '@tsconfig/node12': 1.0.11
+      '@tsconfig/node14': 1.0.3
+      '@tsconfig/node16': 1.0.3
+      '@types/node': 14.18.31
+      acorn: 8.8.0
+      acorn-walk: 8.2.0
+      arg: 4.1.3
+      create-require: 1.1.1
+      diff: 4.0.2
+      make-error: 1.3.6
+      typescript: 4.8.4
+      v8-compile-cache-lib: 3.0.1
+      yn: 3.1.1
     dev: true
 
   /ts-node/10.9.1_gbhfbbeqrol7fxixnzbkbuanxe:

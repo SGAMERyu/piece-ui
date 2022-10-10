@@ -1,7 +1,7 @@
 import { PropType, ExtractPropTypes, ButtonHTMLAttributes, Component } from 'vue'
 import { Color, Size } from '@/types'
 import type Button from './button.vue'
-import { LoaderLine } from '@piece-ui/icon'
+import { LoaderFourFill } from '@piece-ui/icon'
 
 export const buttonProps = {
   size: {
@@ -25,7 +25,13 @@ export const buttonProps = {
   },
   loadingIcon: {
     type: String as PropType<Component>,
-    default: () => LoaderLine
+    default: () => LoaderFourFill
+  },
+  startIcon: {
+    type: String as PropType<Component>,
+  },
+  endIcon: {
+    type: String as PropType<Component>,
   },
   loadingPosition: {
     type: String as PropType<'right' | 'left'>,

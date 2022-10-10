@@ -1,29 +1,29 @@
 export const infoLightColor = {
   100: {
-    value: '#D2FEF6'
+    value: '#D0FDFF'
   },
   200: {
-    value: '#A5FEF5'
+    value: '#A1F5FF'
   },
   300: {
-    value: '#78FDFA'
+    value: '#73E7FF'
   },
   400: {
-    value: '#57F2FB'
+    value: '#50D6FF'
   },
   500: {
-    value: '#20DCF9'
+    value: '#16B9FF'
   },
   600: {
-    value: '#17ADD6'
+    value: '#1090DB'
   },
   700: {
-    value: '#1083B3'
+    value: '#0B6CB7'
   },
   800: {
-    value: '#0A5E90'
+    value: '#074D93'
   },
   900: {
-    value: '#064477'
+    value: '#04377A'
   }
 }

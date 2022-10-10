@@ -13,12 +13,19 @@
     :disabled="disabled"
   >
     <div class="pi-btn-inner">
-      <slot></slot>
-      <div>
-        <Pi-icon>
-          <component :is="loadingIcon"></component>
-        </Pi-icon>
-      </div>
+      <PiIcon v-if="!$slots.startIcon && startIcon" class="pi-btn-leftIcon">
+        <component :is="loading ? loadingIcon : startIcon"></component>
+      </PiIcon>
+      <slot name="startIcon"></slot>
+
+      <span class="pi-btn-label">
+        <slot></slot>
+      </span>
+
+      <PiIcon v-if="!$slots.endIcon && endIcon" class="pi-btn-rightIcon">
+        <component :is="loading ? loadingIcon : endIcon"></component>
+      </PiIcon>
+      <slot name="endIcon"></slot>
     </div>
   </button>
 </template>
@@ -27,6 +34,7 @@
 import { buttonProps } from './button'
 import { addDynamicClass, addVariantClass } from '@/utils'
 import { COLORS } from '@/types'
+import { PiIcon } from '@/components/icon'
 
 defineOptions({
   name: 'PiButton'
@@ -51,6 +59,7 @@ css({
     cursor: 'pointer',
     color: 'var(--pi-btn-text-color)',
     backgroundColor: 'var(--pi-btn-bg-color)',
+    borderRadius: '4px',
     variants: {
       disabled: {
         background: 'var(--pi-btn-disabled-bg-color)',
@@ -70,7 +79,20 @@ css({
       }
     },
     '&-inner': {
-      display: 'flex'
+      display: 'flex',
+      alignItems: 'center',
+      height: '100%'
+    },
+    '&-label': {
+      display: 'flex',
+      alignItems: 'center',
+      height: '100%'
+    },
+    '&-leftIcon': {
+      marginRight: '10px'
+    },
+    '&-rightIcon': {
+      marginLeft: '10px'
     }
   },
   '.pi-btn-xs': {

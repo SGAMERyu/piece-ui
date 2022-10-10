@@ -12,21 +12,32 @@ interface SvgFile {
   svgName: string
 }
 
+const numberConvertEnMap = {
+  '1': 'one',
+  '2': 'two',
+  '3': 'three',
+  '4': 'four',
+  '5': 'five',
+  '6': 'six',
+  '7': 'seven',
+  '8': 'eight',
+  '9': 'nine'
+}
+
 const componentDir = resolve(process.cwd(), 'src/components')
 const componentEntry = resolve(componentDir, 'index.ts')
 
 async function getSvgFiles() {
   const svgFileList: SvgFile[] = []
-  let svgPaths = await glob('icons/**/*.svg', { absolute: true, caseSensitiveMatch: false })
-  // 过滤中间带有数字的图标
-  svgPaths = svgPaths.filter((svgPath) => !/-(\d)-/gm.test(svgPath))
+  const svgPaths = await glob('icons/**/*.svg', { absolute: true, caseSensitiveMatch: false })
   svgPaths.forEach(async (path) => {
     const svgContent = await readFile(path, 'utf-8')
     let svgName = getSvgName(path)
-    const hasNumberPrefix = svgName.match(/^(\d+)/g)
-    if (hasNumberPrefix) {
-      const numberSuffix = hasNumberPrefix.join('')
-      svgName = svgName.replace(numberSuffix, '') + numberSuffix
+    const numberPrefixList = svgName.match(/(\d+)/g)
+    if (numberPrefixList) {
+      numberPrefixList.forEach((num) => {
+        svgName = svgName.replace(num, pascalCase(numberConvertEnMap[num]))
+      })
     }
     const vueComponent = transformSvgToVueTemplate(svgName, svgContent)
     svgFileList.push({ svgContent: vueComponent, svgName })

@@ -9,14 +9,15 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Pinceau from 'pinceau/vite'
 
 export default defineConfig({
+  logLevel: 'info',
   plugins: [
-    vue(),
-    Dts(),
-    DefineOptions(),
     Pinceau({
       configOrPaths: join(__dirname, 'style'),
       configFileName: 'tokens.config'
     }),
+    vue(),
+    Dts(),
+    DefineOptions(),
     AutoImport({
       dts: true,
       imports: ['vue']
