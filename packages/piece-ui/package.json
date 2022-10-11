@@ -20,17 +20,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@piece-ui/icon": "workspace:*",
     "pinceau": "0.2.0",
-    "vue": "^3.2.37",
-    "@piece-ui/icon": "workspace:*"
+    "vue": "^3.2.37"
   },
   "devDependencies": {
-    "@histoire/plugin-vue": "^0.10.7",
-    "@vitejs/plugin-vue": "*",
-    "histoire": "^0.10.7",
+    "@histoire/plugin-vue": "latest",
+    "@vitejs/plugin-vue": "latest",
+    "histoire": "latest",
     "typescript": "^4.6.4",
     "unplugin-vue-define-options": "^0.11.1",
-    "vite": "*",
+    "vite": "3.1.7",
     "vue-tsc": "^0.39.5"
   }
 }

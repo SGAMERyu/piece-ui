@@ -64,6 +64,42 @@
         <PiButton :end-icon="UploadFill" loading>upload file</PiButton>
       </div>
     </Variant>
+    <Variant title="light">
+      <div class="demo-flex">
+        <PiButton color="primary" variant="light">button</PiButton>
+        <PiButton color="info" variant="light">button</PiButton>
+        <PiButton color="success" variant="light">button</PiButton>
+        <PiButton color="warning" variant="light">button</PiButton>
+        <PiButton color="danger" variant="light">button</PiButton>
+      </div>
+    </Variant>
+    <Variant title="subtle">
+      <div class="demo-flex">
+        <PiButton color="primary" variant="subtle">button</PiButton>
+        <PiButton color="info" variant="subtle">button</PiButton>
+        <PiButton color="success" variant="subtle">button</PiButton>
+        <PiButton color="warning" variant="subtle">button</PiButton>
+        <PiButton color="danger" variant="subtle">button</PiButton>
+      </div>
+    </Variant>
+    <Variant title="outline">
+      <div class="demo-flex">
+        <PiButton color="primary" variant="outline">button</PiButton>
+        <PiButton color="info" variant="outline">button</PiButton>
+        <PiButton color="success" variant="outline">button</PiButton>
+        <PiButton color="warning" variant="outline">button</PiButton>
+        <PiButton color="danger" variant="outline">button</PiButton>
+      </div>
+    </Variant>
+    <Variant title="gradient">
+      <div class="demo-flex">
+        <PiButton :gradient="{ from: '#ff9a9e', to: '#fad0c4' }" variant="gradient">button</PiButton>
+        <PiButton :gradient="{ from: '#a18cd1', to: '#fbc2eb' }" variant="gradient">button</PiButton>
+        <PiButton :gradient="{ from: '#d4fc79', to: '#96e6a1', deg: 120 }" variant="gradient">button</PiButton>
+        <PiButton :gradient="{ from: '#a1c4fd', to: '#c2e9fb ', deg: 120 }" variant="gradient">button</PiButton>
+        <PiButton :gradient="{ from: '#667eea', to: '#764ba2', deg: 135 }" variant="gradient">button</PiButton>
+      </div>
+    </Variant>
   </Story>
 </template>
 

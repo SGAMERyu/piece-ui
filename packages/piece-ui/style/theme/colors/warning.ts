@@ -1,29 +1,29 @@
 export const warningLightColor = {
   100: {
-    value: '#FEF9D2'
+    value: '#FFF5CC'
   },
   200: {
-    value: '#FEF2A5'
+    value: '#FFE899'
   },
   300: {
-    value: '#FDE878'
+    value: '#FFD866'
   },
   400: {
-    value: '#FBDE57'
+    value: '#FFC83F'
   },
   500: {
-    value: '#F9CE20'
+    value: '#FFAE00'
   },
   600: {
-    value: '#D6AC17'
+    value: '#DB8E00'
   },
   700: {
-    value: '#B38C10'
+    value: '#B77100'
   },
   800: {
-    value: '#906D0A'
+    value: '#935600'
   },
   900: {
-    value: '#775706'
+    value: '#7A4300'
   }
 }

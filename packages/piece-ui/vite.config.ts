@@ -13,7 +13,7 @@ export default defineConfig({
   plugins: [
     Pinceau({
       configOrPaths: join(__dirname, 'style'),
-      configFileName: 'tokens.config'
+      configFileName: 'tokens.config',
     }),
     vue(),
     Dts(),
@@ -35,6 +35,9 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'index.ts'),
       name: 'PieceUI'
+    },
+    commonjsOptions: {
+      transformMixedEsModules: true
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled

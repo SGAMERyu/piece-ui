@@ -1,29 +1,29 @@
 export const successLightColor = {
   100: {
-    value: '#E8FCD4'
+    value: '#EEFBD0'
   },
   200: {
-    value: '#CDF9AB'
+    value: '#DAF8A2'
   },
   300: {
-    value: '#A7EE7E'
+    value: '#BBEA71'
   },
   400: {
-    value: '#81DE5C'
+    value: '#99D54B'
   },
   500: {
-    value: '#4EC92C'
+    value: '#6CBA1A'
   },
   600: {
-    value: '#34AC20'
+    value: '#549F13'
   },
   700: {
-    value: '#1E9016'
+    value: '#3F850D'
   },
   800: {
-    value: '#0E740E'
+    value: '#2C6B08'
   },
   900: {
-    value: '#08600F'
+    value: '#1F5904'
   }
 }

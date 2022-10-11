@@ -1,10 +1,11 @@
 import type { ConfigTokens, PinceauTokens } from 'pinceau'
 import { tokenSize } from '../components'
+import { neutralsColor } from './colors/neutral'
 import { tokenFontSize } from './font'
 
-const neutralsColor = {
+const normalColor = {
   text: {
-    value: '#2D3546'
+    value: neutralsColor[500].value
   },
   white: {
     value: '#ffffff'
@@ -19,7 +20,7 @@ const neutralsColor = {
 
 export const commonTheme: ConfigTokens & PinceauTokens = {
   colors: {
-    ...neutralsColor
+    ...normalColor
   },
   fontSizes: {
     ...tokenFontSize

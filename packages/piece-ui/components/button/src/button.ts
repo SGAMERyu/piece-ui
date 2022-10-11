@@ -3,6 +3,15 @@ import { Color, Size } from '@/types'
 import type Button from './button.vue'
 import { LoaderFourFill } from '@piece-ui/icon'
 
+export type ButtonVariant = 'light' | 'outline' | 'subtle' | 'filled' | 'default' | 'gradient'
+export interface Gradient {
+  from: string
+  to: string
+  deg?: number
+}
+
+export const defaultGradientDeg = '45deg'
+
 export const buttonProps = {
   size: {
     type: String as PropType<Size>,
@@ -28,10 +37,10 @@ export const buttonProps = {
     default: () => LoaderFourFill
   },
   startIcon: {
-    type: String as PropType<Component>,
+    type: String as PropType<Component>
   },
   endIcon: {
-    type: String as PropType<Component>,
+    type: String as PropType<Component>
   },
   loadingPosition: {
     type: String as PropType<'right' | 'left'>,
@@ -48,6 +57,13 @@ export const buttonProps = {
   disabled: {
     type: Boolean,
     default: false
+  },
+  variant: {
+    type: String as PropType<ButtonVariant>,
+    default: 'filled'
+  },
+  gradient: {
+    type: Object as PropType<Gradient>
   }
 }
 
