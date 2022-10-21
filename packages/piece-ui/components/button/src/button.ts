@@ -2,6 +2,7 @@ import { PropType, ExtractPropTypes, ButtonHTMLAttributes, Component } from 'vue
 import { Color, Size } from '@/types'
 import type Button from './button.vue'
 import { LoaderFourFill } from '@piece-ui/icon'
+import { CssProperties } from 'pinceau/index'
 
 export type ButtonVariant = 'light' | 'outline' | 'subtle' | 'filled' | 'default' | 'gradient'
 export interface Gradient {
@@ -33,14 +34,14 @@ export const buttonProps = {
     default: false
   },
   loadingIcon: {
-    type: String as PropType<Component>,
+    type: Object as PropType<Component>,
     default: () => LoaderFourFill
   },
   startIcon: {
-    type: String as PropType<Component>
+    type: Object as PropType<Component>
   },
   endIcon: {
-    type: String as PropType<Component>
+    type: Object as PropType<Component>
   },
   loadingPosition: {
     type: String as PropType<'right' | 'left'>,
@@ -69,3 +70,20 @@ export const buttonProps = {
 
 export type ButtonProps = ExtractPropTypes<typeof buttonProps>
 export type ButtonInstance = InstanceType<typeof Button>
+
+export function variantTypeHover(props: ButtonProps): any {
+  const { variant } = props
+  if (variant === 'filled') {
+    return `{colors.${props.color}.400}`
+  }
+  if (variant === 'light') {
+    return `{colors.${props.color}.200}`
+  }
+  if (variant === 'outline') {
+    return `{colors.${props.color}.100}`
+  }
+  if (variant === 'subtle') {
+    return `{colors.${props.color}.100}`
+  }
+  return {}
+}

@@ -1,18 +1,9 @@
 <template>
   <button
     class="pi-btn"
-    :class="[
-      av('disabled', disabled),
-      av('full', fullWidth),
-      av('rounded', rounded),
-      av('circle', circle),
-      ds.e(variant, !!variant),
-      ds.e(size, !!size),
-      ds.m(color, COLORS.includes(color) && variant !== 'default')
-    ]"
+    :class="[ds.e(variant, !!variant), $pinceau]"
     :type="nativeType"
     :disabled="disabled"
-    :style="gradientStyle"
   >
     <div class="pi-btn-inner">
       <PiIcon v-if="!$slots.startIcon && startIcon" class="pi-btn-leftIcon">
@@ -33,9 +24,8 @@
 </template>
 
 <script lang="ts" setup>
-import { buttonProps } from './button'
-import { addDynamicClass, addVariantClass } from '@/utils'
-import { COLORS } from '@/types'
+import { buttonProps, variantTypeHover } from './button'
+import { addDynamicClass } from '@/utils'
 import { PiIcon } from '@/components/icon'
 import { CSSProperties } from 'vue'
 
@@ -43,20 +33,9 @@ defineOptions({
   name: 'PiButton'
 })
 
-const props = defineProps(buttonProps)
-
-const av = addVariantClass
+const props = defineProps({ ...buttonProps, ...$variantsProps })
 const ds = addDynamicClass('pi-btn')
 
-const gradientStyle = computed<CSSProperties>(() => {
-  if (props.variant == 'gradient' && props.gradient) {
-    const { from, to, deg = 45 } = props.gradient
-    return {
-      backgroundImage: `linear-gradient(${deg}deg,${from} 0%, ${to} 100%)`
-    }
-  }
-  return {}
-})
 </script>
 
 <style lang="ts">
@@ -69,31 +48,13 @@ css({
     justifyContent: 'center',
     alignItems: 'center',
     outline: 'none',
-    border: '1px solid var(--pi-btn-border-color)',
     background: 'transparent',
     cursor: 'pointer',
-    color: 'var(--pi-btn-text-color)',
-    backgroundColor: 'var(--pi-btn-bg-color)',
     borderRadius: '4px',
     fontWeight: '500',
-    variants: {
-      disabled: {
-        '--pi-btn-border-color': 'transparent',
-        background: 'var(--pi-btn-disabled-bg-color)',
-        color: 'var(--pi-btn-disabled-text-color)',
-        'cursor': 'not-allowed'
-      },
-      full: {
-        width: '100%'
-      },
-      rounded: {
-        borderRadius: '999px'
-      },
-      circle: {
-        width: 'var(--pi-btn-size-width)',
-        padding: '0',
-        borderRadius: '50%'
-      }
+    border: 'none',
+    '&:hover': {
+      backgroundColor: (props) => variantTypeHover(props)
     },
     '&-inner': {
       display: 'flex',
@@ -112,124 +73,100 @@ css({
       marginLeft: '10px'
     },
   },
-  '.pi-btn-default': {
-    '--pi-btn-border-color': '{colors.neutral.200}',
-  },
-  '.pi-btn-filled': {
-    '--pi-btn-border-color': 'transparent',
-    '--pi-btn-text-color': '{colors.white}',
-    '&.pi-btn--primary': {
-      '--pi-btn-bg-color': '{colors.primary.500}'
+  variants: {
+    variant: {
+      default: {
+        color: '{colors.neutral.500}',
+        border: '1px solid {colors.neutral.200}',
+        backgroundColor: 'transparent'
+      },
+      gradient: {
+        color: '{colors.white}',
+        backgroundImage: (props) => {
+          if (props.variant == 'gradient' && props.gradient) {
+            const { from, to, deg = 45 } = props.gradient
+            return `linear-gradient(${deg}deg,${from} 0%, ${to} 100%)`
+          }
+          return 'none'
+        }
+      },
+      filled: {
+        color: '{colors.white}',
+        backgroundColor: (props) => `{colors.${props.color}.500}`
+      },
+      light: {
+        color:(props) => `{colors.${props.color}.500}`,
+        backgroundColor: (props) => `{colors.${props.color}.100}`
+      },
+      outline: {
+        border: (props) => `1px solid {colors.${props.color}.300}`,
+        color: (props) => `{colors.${props.color}.500}`,
+        backgroundColor: 'transparent'
+      },
+      subtle: {
+        color: (props) => `{colors.${props.color}.500}`,
+        backgroundColor: 'transparent'
+      },
+      options: {
+        default: 'filled'
+      }
     },
-    '&.pi-btn--info': {
-      '--pi-btn-bg-color': '{colors.info.500}'
+    disabled: {
+      true: {
+        color: '{colors.text-disabled}',
+        backgroundColor: '{colors.disabled}',
+        cursor: 'not-allowed'
+      }
     },
-    '&.pi-btn--warning': {
-      '--pi-btn-bg-color': '{colors.warning.500}'
+    fullWidth: {
+      true: {
+        width: '100%'
+      }
     },
-    '&.pi-btn--success': {
-      '--pi-btn-bg-color': '{colors.success.500}'
+    rounded: {
+      true: {
+        borderRadius: '999px'
+      }
     },
-    '&.pi-btn--danger': {
-      '--pi-btn-bg-color': '{colors.danger.500}'
+    circle: {
+      true: {
+        width: (props) => {
+          return `{size.btn.${props.size}}`
+        },
+        padding: '0',
+        borderRadius: '50%'
+      }
     },
-  },
-  '.pi-btn-light': {
-    '--pi-btn-border-color': 'transparent',
-    '&.pi-btn--primary': {
-      '--pi-btn-text-color': '{colors.primary.500}',
-      '--pi-btn-bg-color': '{colors.primary.100}'
-    },
-    '&.pi-btn--info': {
-      '--pi-btn-text-color': '{colors.info.500}',
-      '--pi-btn-bg-color': '{colors.info.100}'
-    },
-    '&.pi-btn--warning': {
-      '--pi-btn-text-color': '{colors.warning.500}',
-      '--pi-btn-bg-color': '{colors.warning.100}'
-    },
-    '&.pi-btn--success': {
-      '--pi-btn-text-color': '{colors.success.500}',
-      '--pi-btn-bg-color': '{colors.success.100}'
-    },
-    '&.pi-btn--danger': {
-      '--pi-btn-text-color': '{colors.danger.500}',
-      '--pi-btn-bg-color': '{colors.danger.100}'
-    },
-  },
-  '.pi-btn-outline': {
-    '--pi-btn-bg-color': 'transparent',
-    '&.pi-btn--primary': {
-      '--pi-btn-border-color': '{colors.primary.300}',
-      '--pi-btn-text-color': '{colors.primary.500}'
-    },
-    '&.pi-btn--info': {
-      '--pi-btn-border-color': '{colors.info.300}',
-      '--pi-btn-text-color': '{colors.info.500}'
-    },
-    '&.pi-btn--warning': {
-      '--pi-btn-border-color': '{colors.warning.300}',
-      '--pi-btn-text-color': '{colors.warning.500}'
-    },
-    '&.pi-btn--success': {
-      '--pi-btn-border-color': '{colors.success.300}',
-      '--pi-btn-text-color': '{colors.success.500}'
-    },
-    '&.pi-btn--danger': {
-      '--pi-btn-border-color': '{colors.danger.300}',
-      '--pi-btn-text-color': '{colors.danger.500}'
-    },
-  },
-  '.pi-btn-subtle': {
-    '--pi-btn-bg-color': 'transparent',
-    '&.pi-btn--primary': {
-      '--pi-btn-text-color': '{colors.primary.500}'
-    },
-    '&.pi-btn--info': {
-      '--pi-btn-text-color': '{colors.info.500}'
-    },
-    '&.pi-btn--warning': {
-      '--pi-btn-text-color': '{colors.warning.500}'
-    },
-    '&.pi-btn--success': {
-      '--pi-btn-text-color': '{colors.success.500}'
-    },
-    '&.pi-btn--danger': {
-      '--pi-btn-text-color': '{colors.danger.500}'
-    },
-  },
-  '.pi-btn-gradient': {
-    '--pi-btn-text-color': '{colors.white}',
-  },
-  '.pi-btn-xs': {
-    '--pi-btn-size-width': '{size.btn.xs}',
-    height: '{size.btn.xs}',
-    fontSize: '{fontSizes.xs}',
-    padding: '0px {size.btn-padding.xs}',
-  },
-  '.pi-btn-sm': {
-    '--pi-btn-size-width': '{size.btn.sm}',
-    height: '{size.btn.sm}',
-    fontSize: '{fontSizes.sm}',
-    padding: '0px {size.btn-padding.sm}',
-  },
-  '.pi-btn-md': {
-    '--pi-btn-size-width': '{size.btn.md}',
-    height: '{size.btn.md}',
-    fontSize: '{fontSizes.md}',
-    padding: '0px {size.btn-padding.md}',
-  },
-  '.pi-btn-lg': {
-    '--pi-btn-size-width': '{size.btn.lg}',
-    height: '{size.btn.lg}',
-    fontSize: '{fontSizes.lg}',
-    padding: '0px {size.btn-padding.lg}',
-  },
-  '.pi-btn-xl': {
-    '--pi-btn-size-width': '{size.btn.xl}',
-    height: '{size.btn.xl}',
-    fontSize: '{fontSizes.xl}',
-    padding: '0px {size.btn-padding.xl}',
+    size: {
+      xs: {
+        height: '{size.btn.xs}',
+        fontSize: '{fontSizes.xs}',
+        padding: '0px {size.btn-padding.xs}',
+      },
+      sm: {
+        height: '{size.btn.sm}',
+        fontSize: '{fontSizes.sm}',
+        padding: '0px {size.btn-padding.sm}',
+      },
+      md: {
+        height: '{size.btn.md}',
+        fontSize: '{fontSizes.md}',
+        padding: '0px {size.btn-padding.md}',
+      },
+      lg: {
+        height: '{size.btn.lg}',
+        fontSize: '{fontSizes.lg}',
+        padding: '0px {size.btn-padding.lg}',
+      },
+      xl: {
+        height: '{size.btn.xl}',
+        fontSize: '{fontSizes.xl}',
+        padding: '0px {size.btn-padding.xl}',
+      },
+      options: {
+        default: 'md'
+      }
+    }
   },
 })
 </style>

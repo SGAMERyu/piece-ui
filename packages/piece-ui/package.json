@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@piece-ui/icon": "workspace:*",
-    "pinceau": "0.2.0",
+    "pinceau": "file:.yalc/pinceau",
     "vue": "^3.2.37"
   },
   "devDependencies": {

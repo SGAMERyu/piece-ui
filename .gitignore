@@ -36,3 +36,5 @@ dist
 es
 lib
 packages/piece-icon/src/components
+.yalc
+yalc.lock

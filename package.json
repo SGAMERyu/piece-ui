@@ -10,7 +10,7 @@
     "prepare": "husky install",
     "commit": "npx git-cz",
     "build": "turbo run build",
-    "docs": "pnpm -C docs run dev",
+    "docs": "pnpm -C docs run docs",
     "dev": "turbo run dev --parallel",
     "play": "pnpm -C packages/piece-ui run play",
     "build:icon": "pnpm -C packages/piece-icon run build",
