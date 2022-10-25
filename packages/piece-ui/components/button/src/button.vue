@@ -1,7 +1,6 @@
 <template>
   <button
     class="pi-btn"
-    :class="[ds.e(variant, !!variant), $pinceau]"
     :type="nativeType"
     :disabled="disabled"
   >
@@ -25,16 +24,13 @@
 
 <script lang="ts" setup>
 import { buttonProps, variantTypeHover } from './button'
-import { addDynamicClass } from '@/utils'
 import { PiIcon } from '@/components/icon'
-import { CSSProperties } from 'vue'
 
 defineOptions({
   name: 'PiButton'
 })
 
-const props = defineProps({ ...buttonProps, ...$variantsProps })
-const ds = addDynamicClass('pi-btn')
+defineProps({ ...buttonProps, ...variants })
 
 </script>
 
