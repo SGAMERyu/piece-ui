@@ -37,9 +37,6 @@ defineProps({ ...buttonProps, ...variants })
 <style lang="ts">
 css({
   '.pi-btn': {
-    '--pi-btn-disabled-bg-color': '{colors.disabled}',
-    '--pi-btn-disabled-text-color': '{colors.text-disabled}',
-    '--pi-btn-border-color': 'transparent',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
