@@ -7,3 +7,4 @@ export const PiButtonGroup = withInstall(ButtonGroup)
 export default PiButton
 
 export * from './src/button'
+export * from './src/button-group'

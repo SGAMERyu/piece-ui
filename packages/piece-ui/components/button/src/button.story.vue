@@ -52,6 +52,12 @@
           <PiButton color="danger" variant="subtle">button</PiButton>
           <PiButton color="success" variant="subtle">button</PiButton>
         </div>
+
+        <PiButtonGroup>
+          <PiButton>button</PiButton>
+          <PiButton>button</PiButton>
+          <PiButton>button</PiButton>
+        </PiButtonGroup>
       </template>
     </Variant>
   </Story>
@@ -59,6 +65,7 @@
 
 <script lang="ts" setup>
 import PiButton from './button.vue'
+import PiButtonGroup from './buttonGroup.vue'
 
 function initState() {
   return {

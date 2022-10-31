@@ -2,7 +2,6 @@ import { PropType, ExtractPropTypes, ButtonHTMLAttributes, Component } from 'vue
 import { Color, Size } from '@/types'
 import type Button from './button.vue'
 import { LoaderFourFill } from '@piece-ui/icon'
-import { CssProperties } from 'pinceau/index'
 
 export type ButtonVariant = 'light' | 'outline' | 'subtle' | 'filled' | 'default' | 'gradient'
 export interface Gradient {
@@ -67,6 +66,7 @@ export const buttonProps = {
     type: Object as PropType<Gradient>
   }
 }
+
 
 export type ButtonProps = ExtractPropTypes<typeof buttonProps>
 export type ButtonInstance = InstanceType<typeof Button>
