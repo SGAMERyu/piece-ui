@@ -15,7 +15,7 @@
           <PiButton color="warning" :rounded="state.rounded" :full-width="state.circle">button</PiButton>
           <PiButton color="danger" :rounded="state.rounded" :full-width="state.circle">button</PiButton>
           <PiButton variant="default" :rounded="state.rounded" :full-width="state.circle">button</PiButton>
-          <PiButton disabled :rounded="state.rounded" :full-width="state.circle">button</PiButton>
+          <PiButton disabled :rounded="state.rounded" :full-width="state.circle">disabled</PiButton>
           <PiButton
             variant="gradient"
             :rounded="state.rounded"
@@ -54,6 +54,12 @@
         </div>
 
         <PiButtonGroup>
+          <PiButton>button</PiButton>
+          <PiButton>button</PiButton>
+          <PiButton>button</PiButton>
+        </PiButtonGroup>
+
+        <PiButtonGroup disabled>
           <PiButton>button</PiButton>
           <PiButton>button</PiButton>
           <PiButton>button</PiButton>

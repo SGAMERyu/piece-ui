@@ -13,6 +13,10 @@ export interface Gradient {
 export const defaultGradientDeg = '45deg'
 
 export const buttonProps = {
+  as: {
+    type: String,
+    default: 'button'
+  },
   size: {
     type: String as PropType<Size>,
     default: 'md'
@@ -66,7 +70,6 @@ export const buttonProps = {
     type: Object as PropType<Gradient>
   }
 }
-
 
 export type ButtonProps = ExtractPropTypes<typeof buttonProps>
 export type ButtonInstance = InstanceType<typeof Button>

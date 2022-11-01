@@ -10,7 +10,7 @@ defineOptions({
   name: 'PiButtonGroup'
 })
 
-const props = defineProps(buttonGroupProps)
+const props = defineProps({ ...buttonGroupProps, ...variants })
 
 provide(
   buttonContextKey,
