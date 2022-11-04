@@ -1,5 +1,5 @@
 <template>
-  <PiStyleButton v-bind="filteredProps">
+  <PiStyleButton v-bind="filteredProps" :css="{ ...getCssColors(filteredProps) }">
     <div class="pi-btn-inner">
       <PiIcon v-if="!$slots.startIcon && startIcon" class="pi-btn-leftIcon">
         <component :is="loading ? loadingIcon : startIcon"></component>
@@ -23,6 +23,7 @@ import { buttonProps } from './button'
 import { buttonContextKey, filterPropsWithGroup } from './button-group'
 import { PiIcon } from '@/components/icon'
 import PiStyleButton from './styleButton.vue'
+import { getCssColors } from './button-style'
 
 defineOptions({
   name: 'PiButton'

@@ -1,4 +1,5 @@
 import { PropType, ExtractPropTypes, ButtonHTMLAttributes, Component } from 'vue'
+import { cssProp } from 'pinceau/runtime'
 import { Color, Size } from '@/types'
 import type Button from './button.vue'
 import { LoaderFourFill } from '@piece-ui/icon'
@@ -68,25 +69,10 @@ export const buttonProps = {
   },
   gradient: {
     type: Object as PropType<Gradient>
-  }
+  },
+  css: cssProp
 }
 
 export type ButtonProps = ExtractPropTypes<typeof buttonProps>
 export type ButtonInstance = InstanceType<typeof Button>
 
-export function variantTypeHover(props: ButtonProps): any {
-  const { variant } = props
-  if (variant === 'filled') {
-    return `{colors.${props.color}.400}`
-  }
-  if (variant === 'light') {
-    return `{colors.${props.color}.200}`
-  }
-  if (variant === 'outline') {
-    return `{colors.${props.color}.100}`
-  }
-  if (variant === 'subtle') {
-    return `{colors.${props.color}.100}`
-  }
-  return {}
-}
