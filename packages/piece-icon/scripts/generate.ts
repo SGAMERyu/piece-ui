@@ -12,18 +12,6 @@ interface SvgFile {
   svgName: string
 }
 
-const numberConvertEnMap = {
-  '1': 'one',
-  '2': 'two',
-  '3': 'three',
-  '4': 'four',
-  '5': 'five',
-  '6': 'six',
-  '7': 'seven',
-  '8': 'eight',
-  '9': 'nine'
-}
-
 const componentDir = resolve(process.cwd(), 'src/components')
 const componentEntry = resolve(componentDir, 'index.ts')
 
@@ -32,13 +20,7 @@ async function getSvgFiles() {
   const svgPaths = await glob('icons/**/*.svg', { absolute: true, caseSensitiveMatch: false })
   svgPaths.forEach(async (path) => {
     const svgContent = await readFile(path, 'utf-8')
-    let svgName = getSvgName(path)
-    const numberPrefixList = svgName.match(/(\d+)/g)
-    if (numberPrefixList) {
-      numberPrefixList.forEach((num) => {
-        svgName = svgName.replace(num, pascalCase(numberConvertEnMap[num]))
-      })
-    }
+    const svgName = getSvgName(path)
     const vueComponent = transformSvgToVueTemplate(svgName, svgContent)
     svgFileList.push({ svgContent: vueComponent, svgName })
   })
@@ -46,7 +28,7 @@ async function getSvgFiles() {
 }
 
 function getSvgName(svgPath: string) {
-  return camelCase(parse(svgPath).name)
+  return 'Pi' + pascalCase(parse(svgPath).name)
 }
 
 function transformSvgToVueTemplate(componentName: string, content: string) {
@@ -58,7 +40,7 @@ function transformSvgToVueTemplate(componentName: string, content: string) {
 import { defineComponent } from "vue"
 
 export default defineComponent({
-  name: "${pascalCase(componentName)}"
+  name: "${componentName}"
 })
 </script>
 `

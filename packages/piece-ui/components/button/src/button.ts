@@ -2,7 +2,7 @@ import { PropType, ExtractPropTypes, ButtonHTMLAttributes, Component } from 'vue
 import { cssProp } from 'pinceau/runtime'
 import { Color, Size } from '@/types'
 import type Button from './button.vue'
-import { LoaderFourFill } from '@piece-ui/icon'
+import { PiLoader4Fill } from '@piece-ui/icon'
 
 export type ButtonVariant = 'light' | 'outline' | 'subtle' | 'filled' | 'default' | 'gradient'
 export interface Gradient {
@@ -39,7 +39,7 @@ export const buttonProps = {
   },
   loadingIcon: {
     type: Object as PropType<Component>,
-    default: () => LoaderFourFill
+    default: () => PiLoader4Fill
   },
   startIcon: {
     type: Object as PropType<Component>
