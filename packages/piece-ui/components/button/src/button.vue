@@ -1,5 +1,5 @@
 <template>
-  <PiStyleButton v-bind="filteredProps" :css="{ ...getCssColors(filteredProps) }">
+  <PiStyleButton v-bind="filteredProps" :css="{ ...getCssColors(filteredProps), css }">
     <div class="pi-btn-inner">
       <PiIcon v-if="!$slots.startIcon && startIcon" class="pi-btn-leftIcon">
         <component :is="loading ? loadingIcon : startIcon"></component>
