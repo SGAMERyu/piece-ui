@@ -79,7 +79,7 @@ export function getCssColors(props: ButtonStyleProps): CSS<PinceauTheme> {
         backgroundColor: '{colors.disabled}'
       },
       '.pi-btn-inner': {
-        color: 'red'
+        color: '{colors.text-disabled}'
       }
     }
   }

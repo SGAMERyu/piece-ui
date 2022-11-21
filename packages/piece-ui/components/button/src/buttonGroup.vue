@@ -23,31 +23,45 @@ provide(
 
 <style lang="ts">
 css({
-    '.pi-btn-group': {
-        'display': "flex",
-        '& .pi-btn:not(:last-child)': {
-          borderTopRightRadius: '0px',
-          borderBottomRightRadius: '0px'
-        },
-        '& .pi-btn:not(:first-child)': {
-          borderTopLeftRadius: '0px',
-          borderBottomLeftRadius: '0px'
-        },
-        '& .pi-btn:first-child': {
-          borderTopLeftRadius: '4px',
-          borderBottomLeftRadius: '4px'
-        },
-        '& .pi-btn:last-child': {
-          borderTopRightRadius: '4px',
-          borderBottomRightRadius: '4px'
-        }
-    },
-    variants: {
-      vertical: {
-        true: {
-          'flexDirection': 'column'
-        },
+  '.pi-btn-group': {
+    'display': "flex",
+      '& .pi-btn:not(:last-child)': {
+        borderTopRightRadius: '0px',
+        borderBottomRightRadius: '0px'
+      },
+      '& .pi-btn:not(:first-child)': {
+        borderTopLeftRadius: '0px',
+        borderBottomLeftRadius: '0px'
+      },
+      '& .pi-btn:first-child': {
+        borderTopLeftRadius: '4px',
+        borderBottomLeftRadius: '4px'
+      },
+      '& .pi-btn:last-child': {
+        borderTopRightRadius: '4px',
+        borderBottomRightRadius: '4px'
       }
+  },
+  variants: {
+    vertical: {
+      true: {
+        'flexDirection': 'column',
+        // '& .pi-btn:not(:last-child)': {
+        //   borderRadius: '0px'
+        // },
+        // '& .pi-btn:not(:first-child)': {
+        //   borderRadius: '0px'
+        // },
+        // '& .pi-btn:first-child': {
+        //   borderTopLeftRadius: '4px',
+        //   borderTopRightRadius: '4px'
+        // },
+        // '& .pi-btn:last-child': {
+        //   borderBottomLeftRadius: '4px',
+        //   borderBottomRightRadius: '4px'
+        // }
+      },
     }
+  }
 })
 </style>

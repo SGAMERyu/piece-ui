@@ -6,6 +6,7 @@
 
 <script lang="ts" setup>
 import { buttonProps } from './button'
+import { variantTypeHover } from './button-style'
 
 defineOptions({
   name: 'PiStyleButton'
@@ -26,8 +27,9 @@ css({
     borderRadius: '4px',
     fontWeight: '500',
     border: 'none',
+    width: 'min-content',
     '&:hover': {
-      backgroundColor: 'red'
+      backgroundColor: (props) => variantTypeHover(props)
     },
     '&-inner': {
       display: 'flex',

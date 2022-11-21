@@ -64,6 +64,12 @@
           <PiButton>button</PiButton>
           <PiButton>button</PiButton>
         </PiButtonGroup>
+
+        <PiButtonGroup vertical>
+          <PiButton>button</PiButton>
+          <PiButton>button</PiButton>
+          <PiButton>button</PiButton>
+        </PiButtonGroup>
       </template>
     </Variant>
   </Story>
