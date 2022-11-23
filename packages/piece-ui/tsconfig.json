@@ -15,7 +15,7 @@
     "skipLibCheck": true,
     "types": ["unplugin-vue-define-options/macros-global" /* ... */],
     "paths": {
-      "@/*": ["./*"]
+      "~/*": ["./*"]
     }
   },
   "include": ["**/*.ts", "**/*.d.ts", "**/*.vue", "components/**/**/*", "*.d.ts", "**/**/*.ts"],

@@ -21,7 +21,7 @@
 <script lang="ts" setup>
 import { buttonProps } from './button'
 import { buttonContextKey, filterPropsWithGroup } from './button-group'
-import { PiIcon } from '@/components/icon'
+import { PiIcon } from '~/components/icon'
 import PiStyleButton from './styleButton.vue'
 import { getCssColors } from './button-style'
 
@@ -34,3 +34,4 @@ const groupConfig = inject(buttonContextKey, undefined)
 
 const filteredProps = filterPropsWithGroup(props, groupConfig)
 </script>
+

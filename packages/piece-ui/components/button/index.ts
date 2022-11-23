@@ -1,4 +1,4 @@
-import { withInstall } from '@/utils'
+import { withInstall } from '~/utils'
 import Button from './src/button.vue'
 import ButtonGroup from './src/buttonGroup.vue'
 

@@ -1,7 +1,7 @@
 import { Color, Size } from '@/types'
 import { CSS, PinceauTheme } from 'pinceau/index'
 import { cssProp } from 'pinceau/runtime'
-import { PropType, ExtractPropTypes } from 'vue'
+import type { PropType, ExtractPropTypes } from 'vue'
 
 export type ButtonVariant = 'light' | 'outline' | 'subtle' | 'filled' | 'default' | 'gradient'
 

@@ -3,7 +3,7 @@
     title="button"
     :layout="{
       type: 'grid',
-      width: 'auto'
+      width: '500px'
     }"
   >
     <Variant title="baseButton" :init-state="initState">

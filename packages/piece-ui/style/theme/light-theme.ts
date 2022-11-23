@@ -1,39 +1,20 @@
 import type { ConfigTokens, PinceauTokens } from 'pinceau'
-import { dangerLightColor } from './colors/danger'
-import { infoLightColor } from './colors/info'
-import { neutralsColor } from './colors/neutral'
-import { primaryLightColor } from './colors/primary'
-import { successLightColor } from './colors/success'
-import { warningLightColor } from './colors/warning'
-import commonTheme from './common'
+import { blue, red, gray, green, yellow, indigo } from './colors'
 
 const lightTheme: ConfigTokens & PinceauTokens = {
   colors: {
-    ...commonTheme.colors,
-    primary: {
-      ...primaryLightColor
-    },
-    info: {
-      ...infoLightColor
-    },
-    success: {
-      ...successLightColor
-    },
-    warning: {
-      ...warningLightColor
-    },
-    danger: {
-      ...dangerLightColor
-    },
-    neutral: {
-      ...neutralsColor
-    }
-  },
-  size: {
-    ...commonTheme.size
-  },
-  fontSizes: {
-    ...commonTheme.fontSizes
+    // token color
+    indigo,
+    yellow,
+    green,
+    blue,
+    red,
+    gray,
+
+    // misc
+    text: '{colors.gray.500}',
+    'text-disabled': '#9DA7BE',
+    disabled: '#edf0f8'
   }
 }
 

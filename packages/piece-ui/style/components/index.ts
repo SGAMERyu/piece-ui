@@ -1,5 +1,9 @@
-import { tokenButtonSize } from './button'
+import { tokenButtonSize, buttonUtils } from './button'
 
 export const tokenSize = {
   ...tokenButtonSize
+}
+
+export const componentUtils = {
+  ...buttonUtils
 }

@@ -1,27 +1,8 @@
-import type { ConfigTokens, PinceauTokens } from 'pinceau'
-import { tokenSize } from '../components'
-import { neutralsColor } from './colors/neutral'
+import { palette } from '../../utils'
+import { tokenSize, componentUtils } from '../components'
 import { tokenFontSize } from './font'
 
-const normalColor = {
-  text: {
-    value: neutralsColor[500].value
-  },
-  white: {
-    value: '#ffffff'
-  },
-  'text-disabled': {
-    value: '#9DA7BE'
-  },
-  disabled: {
-    value: '#edf0f8'
-  }
-}
-
-export const commonTheme: ConfigTokens & PinceauTokens = {
-  colors: {
-    ...normalColor
-  },
+const defaultTokens = {
   fontSizes: {
     ...tokenFontSize
   },
@@ -30,4 +11,24 @@ export const commonTheme: ConfigTokens & PinceauTokens = {
   }
 }
 
-export default commonTheme
+const defaultUtils = {
+  ...componentUtils
+}
+
+const defaultColors = {
+  // misc
+  white: '#ffffff',
+  black: '#000000',
+  // brand
+  primary: palette('blue'),
+  danger: palette('red'),
+  warning: palette('yellow'),
+  success: palette('green'),
+  info: palette('indigo')
+}
+
+export default {
+  ...defaultTokens,
+  colors: defaultColors,
+  utils: defaultUtils
+}

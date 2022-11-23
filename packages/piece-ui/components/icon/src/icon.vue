@@ -7,8 +7,8 @@
 <script lang="ts" setup>
 import { iconProps } from './icon'
 import type { CSSProperties } from 'vue'
-import { COLORS } from '@/types'
-import { addCssVarStyle } from '@/utils'
+import { COLORS } from '~/types'
+import { addCssVarStyle } from '~/utils'
 
 defineOptions({
   name: 'PiIcon',

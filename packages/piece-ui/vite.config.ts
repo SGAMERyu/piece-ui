@@ -12,11 +12,12 @@ export default defineConfig({
   logLevel: 'info',
   plugins: [
     Pinceau({
-      configOrPaths: join(__dirname, 'style'),
+      configOrPaths: [resolve(__dirname, 'style')],
       configFileName: 'tokens.config',
+      colorSchemeMode: 'class'
     }),
     vue(),
-    Dts(),
+    // Dts(),
     DefineOptions(),
     AutoImport({
       dts: true,
@@ -26,7 +27,7 @@ export default defineConfig({
   resolve: {
     alias: [
       {
-        find: '@',
+        find: '~',
         replacement: resolve(__dirname)
       }
     ]
